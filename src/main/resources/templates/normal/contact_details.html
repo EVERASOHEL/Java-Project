@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <section>
+        <div class="card mr-3 ml-3" th:if="${contact}">
+            <div class="card-body">
+                <div class="container text-center">
+                    <!-- <img src="" style="height: 200px; width: 200px;" class="my_profile_picture" th:src="@{'/image/'+${contact.image}}" alt="profile picture"> -->
+                    <img src="" style="height: 200px; width: 200px;" class="my_profile_picture" th:src="@{'/resources/'+${contact.image}}" alt="profile picture">
+                    <h3 class="mt-2"><span th:text="${contact.name}"></span>(<span th:text="${contact.secondname}"></span>)</h3>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col">SCMUSER<span th:text="${contact.cid}"></span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Email</th>
+                            <td><span th:text="${contact.email}"></span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Phone</th>
+                            <td><span th:text="${contact.phone}"></span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Work</th>
+                            <td><span th:text="${contact.work}"></span></td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <div class="description">
+                        <th:block th:utext="${contact.description}"></th:block>
+                    </div>
+                    <div class="container mt-2 d-flex" style="justify-content: center;">
+                        <a href="#" th:onclick="|delete_contact(${contact.cid})|" class="btn btn-danger btn-sm">Delete</a>
+                        <form action="" class="ml-2" th:action="@{'/user/update-contact/'+${contact.cid}}" method="post">
+                          <button type="submit" class="btn btn-primary btn-sm">Update</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 th:unless="${contact}" class="bg-danger ml-3 mr-3">You don't have permmision to see this contact...</h1>
+    </section>
+</body>
+
+</html>

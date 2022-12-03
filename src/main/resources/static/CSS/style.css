@@ -1,0 +1,228 @@
+.body {
+    background-color: #e2e2e2;
+}
+
+.navbar {
+    background-color: rgb(173, 157, 160);
+}
+
+#nav_ul :hover {
+    color: burlywood;
+}
+
+.banner {
+    width: 100%;
+    height: 93vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(236, 230, 196, 0.8)), url(../image/contact1.jpg);
+    color: #e2e2e2;
+    background-size: cover;
+}
+
+.my-card {
+    padding: 20px;
+    background-color: white;
+}
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+/* sidebar */
+
+@media only screen and(max-width:600px){
+    .sidebar{
+        display: none;
+        width: 80%;
+        background: white;
+        height: 100vh;
+        position: fixed;
+        padding-top: 20px;
+    }
+    .content{
+        margin-left: 0%!important;
+    }
+}
+
+.sidebar{
+    width: 18%;
+    background: white;
+    position: fixed;
+    height: 100%;
+    padding-top: 45px;
+    z-index: 99999999;
+}
+.sidebar a{
+    display: block;
+    width: 100%;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: gray;
+}
+.sidebar a:hover{
+    background: #e2e2e2;
+}
+.sidebar .divider{
+    height: .5px;
+    width: 100%;
+    background: #e2e2e2;
+    margin-top: 10px;
+}
+.content{
+    margin-left: 20%;
+}
+.sidebar .crossBtn{
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    right: 35px;
+    font-size: 36px;
+}
+
+/* contact form style */
+.contact{
+    /* padding: 4%; */
+    /* height: 400px; */
+}
+.col-md-4{
+    padding: 4%;
+    background: burlywood;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+.contact-info{
+    margin-top:5%;
+}
+.contact-info img{
+    margin-bottom: 5%;
+}
+.contact-info h2{
+    margin-bottom: 10%;
+}
+.col-md-9{
+    padding: 1%;
+    background: #fff;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+    margin-left: 3%;
+    font-weight:600;
+}
+.contact-form button{
+    margin-left: 3%;
+    background: #25274d;
+    color: #fff;
+    font-weight: 600;
+    width: 25%;
+}
+.contact-form button:focus{
+    box-shadow:none;
+}
+.my_profile_picture{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* tost box */
+.alert-container {
+    position: fixed;
+    top: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    right: 10px;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .alert-container {
+      width: 400px;
+    }
+  }
+
+  .modal-alert {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: none;
+    padding: 20px 15px;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .modal-alert .content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .modal-alert .content svg {
+    opacity: 0.9;
+    margin: 0 10px;
+  }
+  
+  .modal-alert h6 {
+    opacity: 0.9;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .modal-alert .bar {
+    height: 2px;
+    left: 8px;
+    bottom: 0px;
+    background: rgb(255, 231, 15);
+    position: absolute;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .progress {
+    animation: alertProgress 5s ease;
+  }
+  
+  @keyframes alertProgress {
+    from {
+        width: 90%;
+    }
+    to {
+        width: 0;
+    }
+  }
+
+  /* search css */
+  .search-container{
+    position: relative;
+  }
+  .search-result{
+    position: absolute;
+    background: white;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    display: none;
+  }
+  .active{
+    background:  rgb(173, 157, 160);
+    color: white;
+    
+  }
